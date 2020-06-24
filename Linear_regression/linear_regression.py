@@ -12,7 +12,11 @@ class LinearRegression:
         2.先得到所有的特征个数
         3.初始化参数矩阵
         """
-        (data_processed, features_mean, features_deviation) = prepare_for_training(data, polynomial_degree=0, sinusoid_degree=0)
+        (
+            data_processed,
+            features_mean,
+            features_deviation
+        ) = prepare_for_training(data, polynomial_degree, sinusoid_degree, normalize_data)
 
         self.data = data_processed
         self.labels = labels
@@ -74,9 +78,10 @@ class LinearRegression:
         num_examples = data.shape[0]       # 样本个数
         # 参差=预测值-真实值
         delta = LinearRegression.hypothesis(self.data, self.theta) - labels
+        # Calculate current predictions cost.
         cost = (1/2)*np.dot(delta.T, delta)
-        print(cost.shape)
-        print(cost)
+        # print(cost.shape)
+        # print(cost)
         return cost[0][0]
 
     @staticmethod

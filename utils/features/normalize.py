@@ -6,6 +6,12 @@ __author__ = 'Qiushi Huang'
 import numpy as np
 
 def normalize(features):
+    """Normalize features.
+    Normalizes input features X. Returns a normalized version of X where the mean value of
+    each feature is 0 and deviation is close to 1.
+    :param features: set of features.
+    :return: normalized set of features.
+    """
 
     # astype：转换数组的数据类型
     features_normalized = np.copy(features).astype(float)

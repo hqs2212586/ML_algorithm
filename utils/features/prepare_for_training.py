@@ -35,7 +35,7 @@ def prepare_for_training(data, polynomial_degree=0, sinusoid_degree=0, normalize
 
     # 特征变换polynomial
     if polynomial_degree > 0:
-        polynomials = generate_polynomials(data_normalized, polynomial_degree)
+        polynomials = generate_polynomials(data_normalized, polynomial_degree, normalize_data)
         data_processed = np.concatenate((data_processed, polynomials), axis=1)
 
     # 加一列1
