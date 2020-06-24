@@ -7,6 +7,7 @@ import numpy as np
 
 def normalize(features):
 
+    # astype：转换数组的数据类型
     features_normalized = np.copy(features).astype(float)
 
     # 计算均值

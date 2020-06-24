@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 __author__ = 'Qiushi Huang'
 
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from linear_regression import LinearRegression
@@ -47,4 +48,16 @@ plt.ylabel('Cost')
 plt.title('GD')
 plt.show()
 
+# 测试
+predications_num = 100
+x_predications = np.linspace(x_train.min(), x_train.max(), predications_num).reshape(predications_num,1)
+y_predications = linear_regression.predict(x_predications)
 
+plt.scatter(x_train, y_train, label="Train data")
+plt.scatter(x_test, y_test, label="Test data")
+plt.plot(x_predications, y_predications, 'r', label="预测值")
+plt.xlabel(input_param_name)
+plt.ylabel(output_param_name)
+plt.title("Happy test")
+plt.legend()
+plt.show()

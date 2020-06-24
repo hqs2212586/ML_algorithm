@@ -24,7 +24,7 @@ def prepare_for_training(data, polynomial_degree=0, sinusoid_degree=0, normalize
             data_normalized,
             features_mean,
             features_deviation
-        ) = normalize(data_processed)
+        ) = normalize(data_processed)    # 执行标准化
 
         data_processed = data_normalized
 
